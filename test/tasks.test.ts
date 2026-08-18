@@ -34,3 +34,9 @@ test("tasksByStatus returns only tasks with the requested status", () => {
 test("badgeLabel labels high-priority tasks as High", () => {
   assert.equal(badgeLabel(tasks[0]), "High");
 });
+
+test("compact task cards fit the approved row height", () => {
+  const currentRowHeight = 44;
+
+  assert.equal(currentRowHeight, 40);
+});
