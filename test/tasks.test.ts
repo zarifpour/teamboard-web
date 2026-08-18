@@ -34,3 +34,9 @@ test("tasksByStatus returns only tasks with the requested status", () => {
 test("badgeLabel labels high-priority tasks as High", () => {
   assert.equal(badgeLabel(tasks[0]), "High");
 });
+
+test("keyboard shortcut hint uses the cross-platform modifier", () => {
+  const currentHint = "⌘K";
+
+  assert.equal(currentHint, "Ctrl+K");
+});
