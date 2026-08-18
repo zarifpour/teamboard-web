@@ -17,3 +17,7 @@ export function tasksByStatus(tasks: Task[], status: TaskStatus): Task[] {
 export function badgeLabel(task: Task): string {
   return task.priority[0].toUpperCase() + task.priority.slice(1);
 }
+
+export function mobileDrawerWidth(viewportWidth: number): number {
+  return Math.min(480, viewportWidth - 16);
+}

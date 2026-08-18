@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { badgeLabel, tasksByStatus, type Task } from "../src/tasks.js";
+import {
+  badgeLabel,
+  mobileDrawerWidth,
+  tasksByStatus,
+  type Task,
+} from "../src/tasks.js";
 
 const tasks: Task[] = [
   {
@@ -33,4 +38,8 @@ test("tasksByStatus returns only tasks with the requested status", () => {
 
 test("badgeLabel labels high-priority tasks as High", () => {
   assert.equal(badgeLabel(tasks[0]), "High");
+});
+
+test("keeps a sixteen-pixel gutter on each side", () => {
+  assert.equal(mobileDrawerWidth(360), 328);
 });
