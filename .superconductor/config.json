@@ -3,7 +3,7 @@
     {
       "name": "web",
       "commands": [
-        "python3 -m http.server 4173 --bind 127.0.0.1 --directory \"$(dirname \"$(git rev-parse --path-format=absolute --git-common-dir)\")\""
+        "python3 -m http.server 0 --bind 127.0.0.1 --directory \"$(git rev-parse --show-toplevel)\""
       ],
       "default": true
     }
