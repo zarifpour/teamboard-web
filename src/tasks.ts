@@ -17,3 +17,9 @@ export function tasksByStatus(tasks: Task[], status: TaskStatus): Task[] {
 export function badgeLabel(task: Task): string {
   return task.priority[0].toUpperCase() + task.priority.slice(1);
 }
+
+export function emptyStateMessage(status: TaskStatus): string {
+  return status === "done"
+    ? "Completed tasks will appear here."
+    : "No tasks match this view.";
+}
