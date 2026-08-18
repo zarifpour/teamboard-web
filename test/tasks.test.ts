@@ -1,15 +1,20 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { badgeLabel, tasksByStatus, type Task } from "../src/tasks.js";
+import {
+  badgeLabel,
+  filterTasks,
+  tasksByStatus,
+  type Task,
+} from "../src/tasks.js";
 
 const tasks: Task[] = [
   {
-    id: "task-1",
+    id: "1",
     title: "Design task board",
     status: "todo",
     priority: "high",
-    assigneeId: "user-1",
+    assigneeId: "daniel",
   },
   {
     id: "task-2",
@@ -33,4 +38,11 @@ test("tasksByStatus returns only tasks with the requested status", () => {
 
 test("badgeLabel labels high-priority tasks as High", () => {
   assert.equal(badgeLabel(tasks[0]), "High");
+});
+
+test("filterTasks returns only tasks assigned to the requested assignee", () => {
+  assert.deepEqual(
+    filterTasks(tasks, { assigneeId: "daniel" }).map((task) => task.id),
+    ["1"],
+  );
 });
