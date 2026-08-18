@@ -1,6 +1,6 @@
 # Teamboard
 
-The Teamboard Web App owns task presentation, filtering, and interaction. Shared Types owns the serialized schema contract, which the Web App treats as its upstream contract. This compact demo currently mirrors the closed task model locally. API validation belongs to the API, while notification delivery belongs to Infrastructure.
+The Teamboard Web App owns task presentation, filtering, and interaction. Shared Types owns the serialized schema contract, which the Web App treats as its upstream contract. The application mirrors the closed task model locally. API validation belongs to the API, while notification delivery belongs to Infrastructure.
 
 ## Development
 
